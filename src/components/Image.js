@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Image = ({ url, desc = '' }) => {
+  const currentImage = url
   return (
     <div>
-      <img src={url} alt={desc} />
+      <img src={`${currentImage}`} alt={desc} />
     </div>
   );
 };
