@@ -1,22 +1,20 @@
-import { useEffect, useState } from 'react';
 import Cards from './components/Cards';
+import FilterHeader from './components/FilterHeader';
 import Header from './components/Header';
-import jobs from './data.json';
+import { DataProvider } from './contexts/DataContext';
 
 function App() {
-  const [jobList, setJobList] = useState([]);
-
-  useEffect(() => {
-    setJobList(jobs);
-  }, [jobList]);
+  // const { arr, handleArr, jobList, setJobList, setArr, handleFilter, jobs } =
+  //   useContext(DataContext);
   return (
     <>
       <Header />
-      <main className='w-screen grid justify-center'>
-        {jobList.map((job) => (
-          <Cards job={job} key={job.id} />
-        ))}
-      </main>
+      <DataProvider>
+        <FilterHeader />
+        <main className='w-screen grid justify-center bg-[#CCFFFF]'>
+          <Cards />
+        </main>
+      </DataProvider>
     </>
   );
 }

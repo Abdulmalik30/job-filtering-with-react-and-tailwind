@@ -1,10 +1,9 @@
 import React from 'react';
-import img from '../images/bg-header-desktop.svg';
 
 const Header = () => {
   return (
     <header className='w-full'>
-      <img src={img} className='w-full' />
+      <img src='./images/bg-header-desktop.svg' className='w-full' />
     </header>
   );
 };
